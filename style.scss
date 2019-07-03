@@ -1,0 +1,85 @@
+body {
+    background-color: aquamarine;
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .multiselect {
+            width: 200px;
+            .sell {
+                position: relative;
+                width: 100%;
+                select {
+                    width: 100%;
+                    font-weight: bold; 
+                }
+                .overSelect {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                  }
+              }
+              #checkboxes {
+                display: none;
+                border: 1px #dadada solid;
+                label {
+                    display: block;
+                    &:hover {
+                        background-color: #1e90ff;
+                      }
+                  }
+              }
+            
+          }
+        .multiselect2 {
+            width: 200px;
+            .buy {
+                position: relative;
+                select {
+                    width: 100%;
+                    font-weight: bold; 
+                }
+                .overSelect2 {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                  }
+              }
+              #checkboxes2 {
+                display: none;
+                border: 1px #dadada solid;
+                label {
+                    display: block;
+                    &:hover {
+                        background-color: #1e90ff;
+                      }
+                  }
+              }
+            
+          }
+
+    }
+    
+}
+
+  form {
+      display: flex;
+      flex-direction: row;
+  }
+  button {
+      margin-left: 20px;
+      width: 80px;
+      height: 20px;
+  }
+
+  
+
+  
+  
+  
+  
+  

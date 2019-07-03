@@ -90,42 +90,47 @@
 // console.log(arr2.reduce(reducer));
 //=========================REDUSER=====================//
 
-function Person(name, surname, massages) {
-  let _massages = massages;
-  const self = this;
-  this.getMassage = () => console.log(_massages);
-  this.setMassage = (a) => _massages.push(a);
-  this.obj = {
-    a: 5,
-    b: function () {
-      return "this.arms";
-    }
-  };
-  this.legs = 2;
-  this.arms = 2;
-  this.name = name;
-  this.surname = surname;
-  this.fullname = () => this.name + ' ' + this.surname;
+// function Person(name, surname, massages) {
+//   let _massages = massages;
+//   const self = this;
+//   this.getMassage = () => console.log(_massages);
+//   this.setMassage = (a) => _massages.push(a);
+//   this.obj = {
+//     a: 5,
+//     b: function () {
+//       return "this.arms";
+//     }
+//   };
+//   this.legs = 2;
+//   this.arms = 2;
+//   this.name = name;
+//   this.surname = surname;
+//   this.fullname = () => this.name + ' ' + this.surname;
   
-}
-let Person1 = new Person("Anton", "Mishkin", []);
-Person1.setMassage("klkl");
-Person1.setMassage("lplplp");
+// }
+// let Person1 = new Person("Anton", "Mishkin", []);
+// Person1.setMassage("klkl");
 
-// Person1.getMassage();
-// Person1.obj.b();
-let getB = Person1.obj.b;
-getB.bind()
-console.log(getB());
-// Person1.obj.b();
+
+// // Person1.getMassage();
+// // Person1.obj.b();
+// let getB = Person1.obj.b;
+// getB.bind()
+// console.log(getB());
+// // Person1.obj.b();
+
+
+
+
+
 
 // function Cars(brand, model, value, price) {
 //   let _price = price;
 //   this.getPrice = () => console.log(_price);
 //   this.setPrice = (a) => _price = a;
-//   this.value = value;
 //   this.brand = brand;
 //   this.model = model;
+//   this.value = value;
 //   this.fullcar = () => this.brand + ' ' + this.model + ' value ' + this.value ;
 // }
 
@@ -140,10 +145,125 @@ console.log(getB());
 // console.log(Audi.fullcar());
 
 
+// function bind(func, context) {
+//   return function() {
+//     return func.apply(context, arguments);
+//   };
+// }
+
+// var user = {
+//   firstName: "Вася",
+//   sayHi: function() {
+//     alert( this.firstName );
+//   }
+// };
+
+// setTimeout(bind(user.sayHi, user), 1000);
+
+// let buy = document.querySelector('#first_number').value;
+// let sell = document.querySelector('#second_number').value;
+// let plus = document.querySelector('#plus');
+// let minus = document.querySelector('#minus');
+// let inStock = document.querySelector('#equal');
+// let output = document.querySelector('#result');
+
+// function pl () {
+//   plus.addEventListener('click', function() {
+//     console.log(this.kupit.value+this.prodat.value);
+//     })
+// }
+// let pl2 = pl.bind(Store);
 
 
 
+// function Store(storeTitle,kupit, prodat ,stock, outerMassage) {
+  // let _massages = stock;
+  // const self = this;
+  // this.getMassage = () => console.log(_massages);
+  // this.setMassage = (a) => plus.addEventListener('click',function(){_massages.push(a.value);});
+//   this.storeTitle = storeTitle;
+//   this.kupit = +kupit;
+//   this.prodat = +prodat;
+//   this.stock = stock;
+//   this.addToStock = pl; 
+//   this.outerMassage=outerMassage;
+// }
+
+// let Tamara = new Store("Tamara", buy, sell, [], output );
+// Tamara.addToStock();
+
+// Tamara.setMassage(buy);
+// Tamara.getMassage();
+
+let expanded = false;
+let firstForm = document.querySelector(".sell").addEventListener('click', function() {
+  let sel = document.querySelector("#checkboxes");
+  if (!expanded) {
+    sel.style.display = "block";
+    expanded = true;
+  } else {
+    sel.style.display = "none";
+    expanded = false;
+  }
+});
+let expanded2 = false;
+let secondForm = document.querySelector(".buy").addEventListener('click', function() {
+  let sel2 = document.querySelector("#checkboxes2");
+  if (!expanded2) {
+    sel2.style.display = "block";
+    expanded2 = true;
+  } else {
+    sel2.style.display = "none";
+    expanded2 = false;
+  }
+});
 
 
+
+let egg = {price:20, quantity:10,}
+let mil = {price:11, volume:1,}
+let bre = {price:5, quantity:1,}
+let saus = {price:28, weight:1,}
+
+function Store(storeTitle,eggs,milk,bread,sausage) {
+  this.storeTitle = storeTitle;
+  this.eggs=eggs;
+  this.milk=milk;
+  this.bread=bread;
+  this.sausage=sausage;
+
+}
+
+let prodat = document.querySelector("#butSell").addEventListener('click', function() {
+  
+  let checkboxOne = document.querySelector("#one");
+  let checkboxTwo = document.querySelector("#two");
+  let checkboxThree = document.querySelector("#three");
+  let checkboxFour = document.querySelector("#four");
+
+  function check (a,b,c,d) {
+    let chec = [];
+    
+    for (let i = 0; i < arguments.length; i++) {
+      // alert( "Привет, " + arguments[i].checked );
+      if (arguments[i].checked) {
+        chec.push.arguments[i];
+        alert(chec);
+      }
+      else {
+        // alert ('Не выбран');
+      }
+    }
+    
+   
+  }
+  check(checkboxOne,checkboxTwo,checkboxThree,checkboxFour);
+  let Tamara = new Store("Tamara", egg, mil, bre, saus);
+  // console.log(Tamara.eggs);
+
+})
+
+
+// console.log(checkbox1.lastElementChild);
 
 
