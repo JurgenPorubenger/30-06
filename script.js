@@ -245,38 +245,50 @@ let checkboxOne = document.querySelector("#one");
 let checkboxTwo = document.querySelector("#two");
 let checkboxThree = document.querySelector("#three");
 let checkboxFour = document.querySelector("#four");
+let label1 = document.querySelector("#labelOne");
+label1.addEventListener('change',function(e) {
+  
+  label1.style.color = "#f542cb";
+  // label1.innerHTML='<input type="checkbox" id="one">Яйца - Куплено';
+
+  console.log(e);
+});
+let label2 = document.querySelector("#labelTwo");
+let label3 = document.querySelector("#labelThree");
 let mass = [checkboxOne,checkboxTwo,checkboxThree,checkboxFour];
+function check (a) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i].checked) {
+      if(a[i].id=="one") {
+        console.log("ijiji");
+        label1.style.color = "#f542cb";
+        label1.innerHTML='<input type="checkbox" id="one">Яйца - Куплено';
+      }
+      else if(a[i].id=="two") {
+       
+        label2.style.color = "#f542cb";
+        label2.innerHTML='<input type="checkbox" id="two">Молоко - Куплено';
+      }
+      else if(a[i].id=="three") {
+    
+        label3.style.color = "#f542cb";
+        label3.innerHTML='<input type="checkbox" id=three">Хлеб - Куплено';
+      }
+      else if(a[i].id=="four") {
+        console.log(a[i]);
+      }
+    }
+    else {
+      console.log("not Changed")
+    }
+  }
+}
+ 
 
 let prodat = document.querySelector("#butSell").addEventListener('click', function(e) {
   e.preventDefault();
-  function check (a) {
-      for (let i = 0; i < a.length; i++) {
-        if (a[i].checked) {
-          if(a[i].id=="one") {
-            let label1 = document.querySelector("#labelOne");
-            label1.style.color = "#f542cb";
-            label1.innerHTML='<input type="checkbox" id="one">Яйца - Куплено';
-          }
-          else if(a[i].id=="two") {
-            let label2 = document.querySelector("#labelTwo");
-            label2.style.color = "#f542cb";
-            label2.innerHTML='<input type="checkbox" id="two">Молоко - Куплено';
-          }
-          else if(a[i].id=="three") {
-            let label3 = document.querySelector("#labelThree");
-            label3.style.color = "#f542cb";
-            label3.innerHTML='<input type="checkbox" id=three">Хлеб - Куплено';
-          }
-          else if(a[i].id=="four") {
-            console.log(a[i]);
-          }
-        }
-        else {
-          console.log("not Changed")
-        }
-      }
-    }
-    check(mass);  
+ 
+    
   
 })
 
