@@ -195,6 +195,8 @@
 // Tamara.setMassage(buy);
 // Tamara.getMassage();
 
+
+
 let expanded = false;
 let firstForm = document.querySelector(".sell").addEventListener('click', function() {
   let sel = document.querySelector("#checkboxes");
@@ -220,8 +222,8 @@ let secondForm = document.querySelector(".buy").addEventListener('click', functi
 
 
 
-let egg = {price:20, quantity:10,}
-let mil = {price:11, volume:1,}
+let egg = {price:20, quantity:10}
+let mil = {price:11, volume:12,}
 let bre = {price:5, quantity:1,}
 let saus = {price:28, weight:1,}
 
@@ -231,39 +233,49 @@ function Store(storeTitle,eggs,milk,bread,sausage) {
   this.milk=milk;
   this.bread=bread;
   this.sausage=sausage;
-
+  this.addMilk=function (){
+    console.log(this.milk.price+=this.milk.price);
+    console.log(this.milk.volume+=this.milk.volume);
+  }
 }
 
-let prodat = document.querySelector("#butSell").addEventListener('click', function() {
-  
-  let checkboxOne = document.querySelector("#one");
-  let checkboxTwo = document.querySelector("#two");
-  let checkboxThree = document.querySelector("#three");
-  let checkboxFour = document.querySelector("#four");
 
-  function check (a,b,c,d) {
-    let chec = [];
-    
-    for (let i = 0; i < arguments.length; i++) {
-      // alert( "Привет, " + arguments[i].checked );
-      if (arguments[i].checked) {
-        chec.push.arguments[i];
-        alert(chec);
-      }
-      else {
-        // alert ('Не выбран');
+
+let checkboxOne = document.querySelector("#one");
+let checkboxTwo = document.querySelector("#two");
+let checkboxThree = document.querySelector("#three");
+let checkboxFour = document.querySelector("#four");
+let mass = [checkboxOne,checkboxTwo,checkboxThree,checkboxFour];
+
+let prodat = document.querySelector("#butSell").addEventListener('click', function(e) {
+  e.preventDefault();
+  function check (a) {
+      for (let i = 0; i < a.length; i++) {
+        if (a[i].checked) {
+          if(a[i].id=="one") {
+          console.log(a[i]);
+          }
+          else if(a[i].id=="two") {
+            console.log(a[i]);
+          }
+          else if(a[i].id=="three") {
+            console.log(a[i]);
+          }
+          else if(a[i].id=="four") {
+            console.log(a[i]);
+          }
+        }
+        else {
+          console.log("not Changed")
+        }
       }
     }
-    
-   
-  }
-  check(checkboxOne,checkboxTwo,checkboxThree,checkboxFour);
-  let Tamara = new Store("Tamara", egg, mil, bre, saus);
-  // console.log(Tamara.eggs);
-
+    check(mass);  
+  
 })
 
-
+let Tamara = new Store("Tamara", egg, mil, bre, saus);
+Tamara.addMilk();
 // console.log(checkbox1.lastElementChild);
 
 
