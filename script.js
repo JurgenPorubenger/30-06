@@ -253,13 +253,19 @@ let prodat = document.querySelector("#butSell").addEventListener('click', functi
       for (let i = 0; i < a.length; i++) {
         if (a[i].checked) {
           if(a[i].id=="one") {
-          console.log(a[i]);
+            let label1 = document.querySelector("#labelOne");
+            label1.style.color = "#f542cb";
+            label1.innerHTML='<input type="checkbox" id="one">Яйца - Куплено';
           }
           else if(a[i].id=="two") {
-            console.log(a[i]);
+            let label2 = document.querySelector("#labelTwo");
+            label2.style.color = "#f542cb";
+            label2.innerHTML='<input type="checkbox" id="two">Молоко - Куплено';
           }
           else if(a[i].id=="three") {
-            console.log(a[i]);
+            let label3 = document.querySelector("#labelThree");
+            label3.style.color = "#f542cb";
+            label3.innerHTML='<input type="checkbox" id=three">Хлеб - Куплено';
           }
           else if(a[i].id=="four") {
             console.log(a[i]);
