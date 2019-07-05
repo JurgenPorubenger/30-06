@@ -246,36 +246,46 @@ let checkboxTwo = document.querySelector("#two");
 let checkboxThree = document.querySelector("#three");
 let checkboxFour = document.querySelector("#four");
 let label1 = document.querySelector("#labelOne");
-label1.addEventListener('change',function(e) {
-  
-  label1.style.color = "#f542cb";
-  // label1.innerHTML='<input type="checkbox" id="one">Яйца - Куплено';
-
-  console.log(e);
-});
 let label2 = document.querySelector("#labelTwo");
 let label3 = document.querySelector("#labelThree");
+let label4 = document.querySelector("#labelFour");
 let mass = [checkboxOne,checkboxTwo,checkboxThree,checkboxFour];
+
+
+label1.addEventListener('change',function(e) {
+    check(mass);
+    if (e.type) {
+        console.log("kmko");
+
+    }
+});
+label2.addEventListener('change',function(e) {
+    check(mass);
+    console.log(label2);
+
+});
+label3.addEventListener('change',function(e) {
+    check(mass);
+    console.log(label3);
+
+});
+label4.addEventListener('change',function(e) {
+    check(mass);
+    console.log(label4);
+
+});
+
+
 function check (a) {
   for (let i = 0; i < a.length; i++) {
     if (a[i].checked) {
-      if(a[i].id=="one") {
-        console.log("ijiji");
-        label1.style.color = "#f542cb";
-        label1.innerHTML='<input type="checkbox" id="one">Яйца - Куплено';
+      if(a[i].id==="one") {
       }
-      else if(a[i].id=="two") {
-       
-        label2.style.color = "#f542cb";
-        label2.innerHTML='<input type="checkbox" id="two">Молоко - Куплено';
+      else if(a[i].id==="two") {
       }
-      else if(a[i].id=="three") {
-    
-        label3.style.color = "#f542cb";
-        label3.innerHTML='<input type="checkbox" id=three">Хлеб - Куплено';
+      else if(a[i].id==="three") {
       }
-      else if(a[i].id=="four") {
-        console.log(a[i]);
+      else if(a[i].id==="four") {
       }
     }
     else {
@@ -287,9 +297,7 @@ function check (a) {
 
 let prodat = document.querySelector("#butSell").addEventListener('click', function(e) {
   e.preventDefault();
- 
-    
-  
+    // check(mass);
 })
 
 let Tamara = new Store("Tamara", egg, mil, bre, saus);
